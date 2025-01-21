@@ -1,6 +1,6 @@
 {
   "name": "fang",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "统计图 https://sc.chinaz.com/mobandemo.aspx?downloadid=820213364836 https://sc.chinaz.com/mobandemo.aspx?downloadid=32021115010848",
   "main": "main.js",
   "directories": {
@@ -11,8 +11,26 @@
     "start": "electron-forge start",
     "make": "electron-forge make",
     "package": "electron-forge package",
-    "pack": "electron-builder"
+    "pack": "electron-builder",
+    "publish": "electron-forge publish"
   },
+  "config": {
+   "forge": {
+    "makers": [
+      {
+        "name": "@electron-forge/maker-squirrel",
+        "config": {
+          "name": "fang_app"
+        }
+      },
+      {
+        "name": "@electron-forge/maker-zip",
+        "platforms": ["win32"]
+      }
+    ]
+  }
+  },
+
   "author": "fang",
   "license": "ISC",
   "build": {
@@ -23,7 +41,7 @@
     "signingHashAlgorithms": [
       "sha256"
     ],
-    "rfc3161TimeStampServer":"http://timestamp.comodoca.com/rfc3161",
+    "rfc3161TimeStampServer": "http://timestamp.comodoca.com/rfc3161",
     "publish": {
       "provider": "generic",
       "url": "https://gy.baixincloud.cn/updates"
@@ -41,6 +59,7 @@
     "@electron-forge/maker-zip": "^7.6.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.6.0",
     "@electron-forge/plugin-fuses": "^7.6.0",
+    "@electron-forge/publisher-github": "^7.6.0",
     "@electron/fuses": "^1.8.0",
     "electron": "^34.0.0",
     "electron-builder": "^25.1.8"
