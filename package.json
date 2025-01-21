@@ -1,0 +1,52 @@
+{
+  "name": "fang",
+  "version": "1.0.1",
+  "description": "统计图 https://sc.chinaz.com/mobandemo.aspx?downloadid=820213364836 https://sc.chinaz.com/mobandemo.aspx?downloadid=32021115010848",
+  "main": "main.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "make": "electron-forge make",
+    "package": "electron-forge package",
+    "pack": "electron-builder"
+  },
+  "author": "fang",
+  "license": "ISC",
+  "build": {
+    "appId": "this.is.tasky",
+    "productName": "Tasky",
+    "copyright": "Copyright © 2021 Alaso",
+    "verifyUpdateCodeSignature": false,
+    "signingHashAlgorithms": [
+      "sha256"
+    ],
+    "rfc3161TimeStampServer":"http://timestamp.comodoca.com/rfc3161",
+    "publish": {
+      "provider": "generic",
+      "url": "https://gy.baixincloud.cn/updates"
+    }
+  },
+  "publish": {
+    "provider": "generic",
+    "url": "https://gy.baixincloud.cn/updates"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.6.0",
+    "@electron-forge/maker-deb": "^7.6.0",
+    "@electron-forge/maker-rpm": "^7.6.0",
+    "@electron-forge/maker-squirrel": "^7.6.0",
+    "@electron-forge/maker-zip": "^7.6.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.6.0",
+    "@electron-forge/plugin-fuses": "^7.6.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.3.9"
+  }
+}
