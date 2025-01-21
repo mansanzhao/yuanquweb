@@ -1,18 +1,17 @@
 {
   "name": "fang",
-  "version": "1.0.3",
+  "version": "2.0.3",
   "description": "统计图 https://sc.chinaz.com/mobandemo.aspx?downloadid=820213364836 https://sc.chinaz.com/mobandemo.aspx?downloadid=32021115010848",
   "main": "main.js",
-  "directories": {
-    "doc": "doc"
-  },
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "make": "electron-forge make",
     "package": "electron-forge package",
     "pack": "electron-builder",
-    "publish": "electron-forge publish"
+    "publish": "electron-forge publish",
+    "release": "electron-builder"
   },
   "config": {
    "forge": {
@@ -34,19 +33,31 @@
   "author": "fang",
   "license": "ISC",
   "build": {
-    "appId": "this.is.tasky",
-    "productName": "Tasky",
-    "copyright": "Copyright © 2021 Alaso",
-    "verifyUpdateCodeSignature": false,
-    "signingHashAlgorithms": [
-      "sha256"
-    ],
-    "rfc3161TimeStampServer": "http://timestamp.comodoca.com/rfc3161",
-    "publish": {
-      "provider": "generic",
-      "url": "https://gy.baixincloud.cn/updates"
-    }
+  "appId": "com.example.app",
+  "productName": "YourAppName",
+  "files": [
+    "dist/**/*",
+    "node_modules/**/*",
+    "main.js"
+  ],
+  "directories": {
+    "output": "build"
   },
+  "win": {
+    "target": "nsis",
+    "icon": "build/icon.ico"
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "mansanzhao",
+    "repo": "yuanquweb"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  }
+},
+  
   "publish": {
     "provider": "generic",
     "url": "https://gy.baixincloud.cn/updates"
