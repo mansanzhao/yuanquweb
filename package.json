@@ -59,11 +59,8 @@
         "provider": "github",
         "owner": "mansanzhao",
         "repo": "yuanquweb"
-      },
-      {
-        "provider": "generic",
-        "url": "https://gy.baixincloud.cn/updates"
       }
+      
     ],
     "nsis": {
       "oneClick": false,
