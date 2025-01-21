@@ -1,6 +1,6 @@
 {
   "name": "fang",
-  "version": "2.0.5",
+  "version": "1.0.6",
   "description": "统计图 https://sc.chinaz.com/mobandemo.aspx?downloadid=820213364836 https://sc.chinaz.com/mobandemo.aspx?downloadid=32021115010848",
   "main": "main.js",
   "scripts": {
@@ -23,7 +23,9 @@
         },
         {
           "name": "@electron-forge/maker-zip",
-          "platforms": ["win32"]
+          "platforms": [
+            "win32"
+          ]
         }
       ]
     }
@@ -38,6 +40,13 @@
       "node_modules/**/*",
       "main.js"
     ],
+    "extraResources": [
+    {
+      "from": "node_modules/electron-log",
+      "to": "node_modules/electron-log",
+      "filter": ["**/*"]
+    }
+  ],
     "directories": {
       "output": "build"
     },
@@ -75,6 +84,7 @@
     "electron-builder": "^25.1.8"
   },
   "dependencies": {
+    "electron-log": "^5.2.4",
     "electron-squirrel-startup": "^1.0.1",
     "electron-updater": "^6.3.9"
   }

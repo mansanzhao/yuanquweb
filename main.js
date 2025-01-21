@@ -1,6 +1,10 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const path = require('path');
+const log = require('electron-log');
+
+log.info('Application starting...');
+
 
 // 设置应用程序用户模型ID
 Object.defineProperty(app, 'isPackaged', {
